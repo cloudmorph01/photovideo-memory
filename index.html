@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Memories — Personal Memory Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">RY</div>
+      <div class="brand">
+        <h1>Ravi Memories</h1>
+        <p>Save photos, videos and links — stored locally in your browser.</p>
+      </div>
+      <div class="toolbar">
+        <button class="btn small" id="exportBtn">Export</button>
+        <button class="btn ghost small" id="importBtn">Import</button>
+        <button class="btn ghost small" id="clearBtn">Clear All</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <form id="memoryForm" class="grid" onsubmit="return false">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" type="text" placeholder="eg. First college day" required />
+
+          <label for="description">Description</label>
+          <textarea id="description" placeholder="Write a short note..."></textarea>
+
+          <label for="link">College / Any Link (optional)</label>
+          <input id="link" type="url" placeholder="https://your-college.example" />
+
+          <div class="file-row">
+            <input id="fileInput" type="file" accept="image/*,video/*" />
+            <button id="addBtn" class="btn">Add Memory</button>
+          </div>
+          <p class="tip">Files are saved locally in your browser.</p>
+        </div>
+
+        <div class="controls">
+          <label>Preview</label>
+          <div id="preview" class="preview-box">
+            <span>No file selected</span>
+          </div>
+
+          <label>Quick Filters</label>
+          <div class="filter-row">
+            <button class="btn ghost small" id="filterAll">All</button>
+            <button class="btn ghost small" id="filterImg">Images</button>
+            <button class="btn ghost small" id="filterVid">Videos</button>
+          </div>
+
+          <label>Search</label>
+          <input id="search" type="text" placeholder="Search title or description" />
+        </div>
+      </form>
+
+      <div id="gallery" class="memories"></div>
+    </section>
+
+    <footer>Made with — Ravi.</footer>
+    <footer>© 2025 Ravi Yadav — All rights reserved.</footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalTitle"></h3>
+          <p id="modalDate"></p>
+        </div>
+        <div>
+          <button id="editBtn" class="btn ghost small">Edit</button>
+          <button id="closeModal" class="btn small">Close</button>
+        </div>
+      </div>
+      <div id="modalMediaWrap"></div>
+      <p id="modalDesc"></p>
+      <p id="modalLink"></p>
+    </div>
+  </div>
+
+  <input id="importFile" type="file" accept="application/json" style="display:none" />
+  <script src="script.js"></script>
+</body>
+</html>
