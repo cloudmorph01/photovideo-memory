@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Memories — Personal Memory Website</title>
+  <title>My Memories — Cloudinary Upload</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="logo">RY</div>
+      <div class="logo">MY</div>
       <div class="brand">
-        <h1>Ravi Memories</h1>
-        <p>Save photos, videos and links — stored locally in your browser.</p>
+        <h1>My Memories</h1>
+        <p>Upload photos/videos & store them permanently via Cloudinary.</p>
       </div>
       <div class="toolbar">
         <button class="btn small" id="exportBtn">Export</button>
@@ -35,9 +35,12 @@
 
           <div class="file-row">
             <input id="fileInput" type="file" accept="image/*,video/*" />
-            <button id="addBtn" class="btn">Add Memory</button>
+            <button id="uploadBtn" class="btn" type="button">Upload to Cloudinary</button>
           </div>
-          <p class="tip">Files are saved locally in your browser.</p>
+          <div id="uploadStatus" class="tip"></div>
+
+          <button id="addBtn" class="btn" type="button">Add Memory</button>
+          <p class="tip">Files are uploaded to Cloudinary, links stored locally.</p>
         </div>
 
         <div class="controls">
@@ -61,7 +64,6 @@
       <div id="gallery" class="memories"></div>
     </section>
 
-    <footer>Made with — Ravi.</footer>
     <footer>© 2025 Ravi Yadav — All rights reserved.</footer>
   </div>
 
